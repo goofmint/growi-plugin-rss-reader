@@ -1,54 +1,28 @@
-# GROIW Plugin template for script
+# GROIW Plugin RSS Reader
 
-This is a template for creating a GROWI script plugin.
+This is a GROWI plugin to read RSS feeds.
 
 ## Usage
 
-### Download or folk this repository.
+### Simple
 
-```bash
-git clone git@github.com:goofmint/growi-plugin-script-template.git
+```markdown
+[RSS](https://qiita.com/tags/growi/feed)
 ```
 
-### Change the name of the plugin in package.json.
+### Advanced
 
-```js
-{
-  "name": "growi-plugin-script-template",  // Change this name
-  "version": "1.0.0",
-  "description": "GROWI plugin template for script", // Change this description
-	:
-}
+```markdown
+::rss[https://qiita.com/tags/growi/feed]{apiKey=API_KEY count=2 order=pubDate}
 ```
 
-### Edit those files
+You need to get the API Key from [RSS to JSON Converter online](https://rss2json.com/).
 
-Of course, you can add or remove files as you like.
+## Notice
 
-- client-entry.tsx
-- src/Hello.tsx
-- src/Hello.css
-- src/Demo.tsx
+You have to set the URL of the RSS feed to the `[RSS]` macro.
 
-### Preview the plugin
-
-```bash
-yarn dev
-```
-
-### Build the plugin
-
-```bash
-yarn build
-```
-
-## Publish the plugin at GROWI
-
-Add a topic `growi-plugin` on your GitHub repository.
-
-Then, you can see your plugin on the GROWI plugin list page below.
-
-https://growi.org/plugins
+This plugin uses [RSS to JSON Converter online](https://rss2json.com/). So the plguin doesn't support local RSS feeds inside LAN network.
 
 ## License
 

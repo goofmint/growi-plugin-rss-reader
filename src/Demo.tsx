@@ -2,16 +2,18 @@ import React from 'react';
 
 import ReactDOM from 'react-dom/client';
 
-import { helloGROWI } from './Hello';
+import { rssReader } from './RSSReader';
 
-const href = 'https://growi.org/';
+const href = 'https://qiita.com/tags/growi/feed';
 
-const HelloGROWI = helloGROWI(() => <a href={href}>Hello, GROWI</a>);
+const RSSReader = rssReader(() => <a href={href}>RSS</a>);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <HelloGROWI
+    <RSSReader
       href={href}
-    >Hello, GROWI</HelloGROWI>
+    >
+      RSS
+    </RSSReader>
   </React.StrictMode>,
 );
