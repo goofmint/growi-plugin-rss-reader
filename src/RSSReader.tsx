@@ -29,7 +29,7 @@ export const rssReader = (Tag: React.FunctionComponent<any>): React.FunctionComp
   }) => {
     try {
       if (children === null || children !== 'RSS') {
-        return <Tag {...props}>{children}</Tag>;
+        return <Tag title={title} href={href} {...props}>{children}</Tag>;
       }
       const { apiKey, count, order } = parseOptions(title);
       const params = new URLSearchParams();
@@ -79,7 +79,7 @@ export const rssReader = (Tag: React.FunctionComponent<any>): React.FunctionComp
     }
     // Return the original component if an error occurs
     return (
-      <Tag {...props}>{children}</Tag>
+      <Tag title={title} href={href} {...props}>{children}</Tag>
     );
   };
 };
